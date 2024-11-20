@@ -37,7 +37,7 @@ const UserAct = () => {
       await axios.patch(`${baseuRL}${apiUrl}`, {}, {
         headers: {
           Authorization: `Bearer ${token}`, // Include the token
-        },
+        }
       });
   
       // Update the local state after successful API call
