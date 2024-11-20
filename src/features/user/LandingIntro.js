@@ -9,9 +9,9 @@ function LandingIntro(){
             <div className="hero-content py-12">
               <div className="max-w-md">
 
-              <h1 className='text-3xl text-center font-bold '>Mining Market | سوق التعدين</h1>
+              <h1 className='text-3xl text-center font-bold '>Pal Car Bazaar</h1>
 
-                <div className="text-center mt-12"><img src="/logo.png" alt="Dashwind Admin Template" className="w-32 inline-block"></img></div>
+                <div className="text-center mt-12 "><img src="/trace2.edbe6ead.png" alt="Dashwind Admin Template" className="w-32 inline-block "></img></div>
               
               {/* Importing pointers component */}
               {/* <TemplatePointers /> */}

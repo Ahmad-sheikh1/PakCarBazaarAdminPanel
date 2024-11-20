@@ -49,26 +49,26 @@ const routes = [
     icon: <MdOutlineMiscellaneousServices className={iconClasses} />,
     name: "Sell car"
   },
-  // {
-  //   path: '/app/JobUsers',
-  //   icon: <FaUserSecret className={iconClasses} />,
-  //   name: "Job Users"
-  // },
-  // {
-  //   path: '/app/IternShipUser',
-  //   icon: <PiUserSwitchThin className={iconClasses} />,
-  //   name: "InternShip Users"
-  // },
-  // {
-  //   path: '/app/Ads',
-  //   icon: <FaBuysellads className={iconClasses} />,
-  //   name: "Ads"
-  // },
-  // {
-  //   path: '/app/ComponyJobs',
-  //   icon: <PiUsersFour className={iconClasses} />,
-  //   name: "Compony Jobs"
-  // },
+  {
+    path: '/app/chatsystem',
+    icon: <FaUserSecret className={iconClasses} />,
+    name: "Chat System"
+  },
+  {
+    path: '/app/AdminControl',
+    icon: <PiUserSwitchThin className={iconClasses} />,
+    name: "Admin Controls"
+  },
+  {
+    path: '/app/Blogs',
+    icon: <FaBuysellads className={iconClasses} />,
+    name: "Blogs"
+  },
+  {
+    path: '/app/Slider',
+    icon: <PiUsersFour className={iconClasses} />,
+    name: "Slider "
+  },
   // {
   //   path: "/app/leads", // url
   //   icon: <InboxArrowDownIcon className={iconClasses} />, // icon component

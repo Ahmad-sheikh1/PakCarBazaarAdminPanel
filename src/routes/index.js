@@ -17,6 +17,10 @@ const UpdateUser = lazy(() => import("../pages/protected/EditMode"))
 const PerUserDetailPage = lazy(() => import("../pages/protected/PerDetailPage"))
 const ServicePage = lazy(() => import("../pages/protected/BecomeOurPartner"));
 const SellCar = lazy(() => import("../pages/protected/SellCar"));
+const Chat = lazy(() => import("../pages/protected/ChatManagment"));
+const AdminControl = lazy(() => import("../pages/protected/AdminControls"))
+const Blogs = lazy(() => import("../pages/protected/BlogsPage"));
+const Slider = lazy(() => import("../pages/protected/SliderPage"))
 
 const routes = [
   {
@@ -69,7 +73,20 @@ const routes = [
   {
     path: '/blank',
     component: Blank,
+  },{
+    path : '/chatsystem',
+    component : Chat
+  },{
+    path:'/AdminControl',
+    component : AdminControl
+  },{
+    path : '/Blogs' , 
+    component : Blogs
   },
+  {
+    path : '/Slider',
+    component : Slider
+  }
 ]
 
 export default routes;
