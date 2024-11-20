@@ -28,12 +28,12 @@ function LeftSidebar() {
             to={"/app/dashboard"}
             className="flex justify-center items-center "
           >
-            <img
+            {/* <img
               className="mask mask-squircle w-10"
               src="/logo.png"
               alt="Mining Market | سوق التعدين"
-            />
-            Mining Market | سوق التعدين
+            /> */}
+            Pak Car Bazaar 
           </Link>
         </li>
         {routes.map((route, k) => {

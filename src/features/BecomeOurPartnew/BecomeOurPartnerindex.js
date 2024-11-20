@@ -6,8 +6,8 @@ import { BiSolidEdit } from 'react-icons/bi';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import axios from 'axios';
 import { baseuRL } from '../../app/api';
-import EditModelMining from "./EditModelMin";
-import AddModalMining from "./AdMiningModal"
+import EditModelSer from './EditModelService';
+import AddModalService from './AdServiceModel';
 
 
 
@@ -41,69 +41,67 @@ const Serviceindex = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const fetchData = async () => {
+    const token = localStorage.getItem('token'); // Get the token from localStorage
 
-    const res = await axios.get(`https://arabic-application-01.vercel.app/api/miningservice/AllServices`);
-    console.log(res.data);
-    // const agancyUsers = res.data.services.filter((user) => user.role === "CM")
-    setOriginalData(res.data.AllServices);
-    setFilteredData(res.data.AllServices);
-    // }
-  }
+    if (!token) {
+        console.log("No token found, user may not be authenticated.");
+        return; // Optionally, handle the case where no token is found
+    }
+
+    try {
+        const res = await axios.get(`${baseuRL}/api/becomeourpartner/getallrequests`, {
+            headers: {
+                Authorization: `Bearer ${token}`, // Include the token in the headers
+            },
+        });
+
+        console.log(res.data.data);
+        setOriginalData(res.data.data); // Assuming you're updating your state with this data
+        setFilteredData(res.data.data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        // Optionally handle errors (e.g., redirect to login if unauthorized)
+    }
+};
+
   useEffect(() => {
 
 
     fetchData();
   }, []);
 
-  const handleSaveAdd = async (newService) => {
-    try {
-      const res = await axios.post(`https://arabic-application-01.vercel.app/api/miningservice/Create`, newService);
-      console.log(res)
-      setOriginalData([...originalData, res.data.data]);
-      setFilteredData([...filteredData, res.data.data]);
-      setIsAddModalOpen(false);
-    } catch (error) {
-      console.error('Error adding service:', error);
-    }
-  };
-
-  const handleAddService = () => {
-    setIsAddModalOpen(true);
-  }
-
-  const handleSave = (updatedUser) => {
-    // setOriginalData(originalData.map(user =>
-    //   user._id === updatedUser._id ? updatedUser : user
-    // ));
-    // setFilteredData(filteredData.map(user =>
-    //   user._id === updatedUser._id ? updatedUser : user
-    // ));
-    setIsModalOpen(false);
-    fetchData();
+    const handleSave = (updatedUser) => {
+      // const updatedData = originalData.map((data) =>
+      //   data._id === updatedUser._id ? updatedUser : data
+      // );
+      // setOriginalData(updatedData);
+      // setFilteredData(updatedData);
+     setIsModalOpen(false);
+     fetchData();
 
   };
 
-  const applySearch = (value) => {
-    if (value === "") {
-      setFilteredData(originalData);
-    } else {
-      const filtered = originalData.filter((user) =>
-        user.email.toLowerCase().includes(value.toLowerCase()) ||
-        user.accountName.toLowerCase().includes(value.toLowerCase())
-      );
-      setFilteredData(filtered);
-    }
-  };
+  // const applySearch = (value) => {
+  //   if (value === "") {
+  //     setFilteredData(originalData);
+  //   } else {
+  //     const filtered = originalData.filter((user) =>
+  //       user.email.toLowerCase().includes(value.toLowerCase()) ||
+  //       user.accountName.toLowerCase().includes(value.toLowerCase())
+  //     );
+  //     setFilteredData(filtered);
+  //   }
+  // };
 
-  const handleEdit = (user) => {
-    // navigate(`/app/update/user/${user._id}`, { state: { user } });
-    setEditUser(user);
-    setIsModalOpen(true);
-  };
+  // const handleEdit = (user) => {
+  //   // navigate(`/app/update/user/${user._id}`, { state: { user } });
+  //   setEditUser(user);
+  //   setIsModalOpen(true);
+  // };
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`https://arabic-application-01.vercel.app/api/miningservice/del/${userId}`);
+      await axios.delete(`https://arabic-application-01.vercel.app/api/services/del/${userId}`);
       setOriginalData(originalData.filter(user => user._id !== userId));
       setFilteredData(filteredData.filter(user => user._id !== userId));
     } catch (error) {
@@ -114,17 +112,17 @@ const Serviceindex = () => {
 
   return (
     <>
-      <TitleCard title={'Mining Services'} topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} HandleAddService={handleAddService} />} applySearch={applySearch} >
+      <TitleCard title={'Become Our Partner Requests'} topMargin="mt-2" >
+      {/* <TitleCard title={'Services'} topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} HandleAddService={handleAddService} />} applySearch={applySearch} > */}
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
             <thead>
               <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Mining Count</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Name</th>
+                <th>Compony Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Phone </th>
               </tr>
             </thead>
             <tbody>
@@ -140,22 +138,22 @@ const Serviceindex = () => {
                             </div>
                           </div> */}
                           <div>
-                            <Link to={`/app/user/${user._id.toString()}`} className="cursor-pointer font-bold">{user.Title}</Link>
+                            <Link to={`/app/user/${user._id.toString()}`} className="cursor-pointer font-bold">{user.firstName}</Link>
                           </div>
                         </div>
                       </td>
-                      <td>{user.Section}</td>
-                      <td>{user.ratingCount}</td>
-                      <td>{user.Location}</td>
-                      <td>{user.status}</td>
-                      <td className='flex items-center justify-between gap-2'>
+                      <td>{user.companyName}</td>
+                      <td>{user.email}</td>
+                      <td>{user.city}</td>
+                      <td>{user.mobileNumber}</td>
+                      {/* <td className='flex items-center justify-between gap-2'>
                         <button onClick={() => handleEdit(user)} className=" text-blue-500 w-6 h-6">
                           <BiSolidEdit />
                         </button>
                         <button onClick={() => handleDelete(user._id)} className="text-red-500 w-6 h-6">
                           <FaRegTrashCan />
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   )
                 })
@@ -164,17 +162,17 @@ const Serviceindex = () => {
           </table>
         </div>
       </TitleCard>
-      <EditModelMining
+      {/* <EditModelSer
         user={editUser}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSave={handleSave}
-      />
-      <AddModalMining
+      /> */}
+      {/* <AddModalService
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
         onSave={handleSaveAdd}
-      />
+      /> */}
     </>
   )
 }

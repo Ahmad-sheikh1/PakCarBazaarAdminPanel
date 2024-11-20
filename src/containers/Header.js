@@ -6,10 +6,8 @@ import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon'
 import MoonIcon from '@heroicons/react/24/outline/MoonIcon'
 import SunIcon from '@heroicons/react/24/outline/SunIcon'
 import { openRightDrawer } from '../features/common/rightDrawerSlice';
-import { RIGHT_DRAWER_TYPES } from '../utils/globalConstantUtil'
 
 import { NavLink, Routes, Link, useLocation } from 'react-router-dom'
-import { GoogleTranslate } from '../utils/translatelang'
 
 function Header() {
 
@@ -93,10 +91,10 @@ function Header() {
                         </div>
                     </button> */}
                     {/* Notification icon */}
-                    <div className='ml-2' >
+                    {/* <div className='ml-2' >
                     <GoogleTranslate prefLangCookie="en"/>
 
-                    </div>
+                    </div> */}
 
 
                     {/* Profile icon, opening menu on click */}

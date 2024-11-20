@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminApprovelindex from '../../features/AdminApprovel'
+import AdminApprovelindex from '../../features/CarInspectionRequest'
 
 
 const Adminapprovel = () => {

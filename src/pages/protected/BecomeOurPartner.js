@@ -1,5 +1,5 @@
 import React from 'react'
-import Serviceindex from '../../features/Servicess/Serviceindex'
+import Serviceindex from '../../features/BecomeOurPartnew/BecomeOurPartnerindex'
 
 const Services = () => {
     return (

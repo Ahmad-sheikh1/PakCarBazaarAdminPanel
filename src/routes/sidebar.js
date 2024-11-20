@@ -40,35 +40,35 @@ const routes = [
     icon: <Squares2X2Icon className={iconClasses} />,
     name: "Dashboard",
   }, {
-    path: '/app/Services',
+    path: '/app/BecomeOurPartner',
     icon: <GrServices className={iconClasses} />,
-    name: "Services"
+    name: "Become Our Partner"
   },
   {
-    path: '/app/MiningServices',
+    path: '/app/SellCar',
     icon: <MdOutlineMiscellaneousServices className={iconClasses} />,
-    name: "Mining Services"
+    name: "Sell car"
   },
-  {
-    path: '/app/JobUsers',
-    icon: <FaUserSecret className={iconClasses} />,
-    name: "Job Users"
-  },
-  {
-    path: '/app/IternShipUser',
-    icon: <PiUserSwitchThin className={iconClasses} />,
-    name: "InternShip Users"
-  },
-  {
-    path: '/app/Ads',
-    icon: <FaBuysellads className={iconClasses} />,
-    name: "Ads"
-  },
-  {
-    path: '/app/ComponyJobs',
-    icon: <PiUsersFour className={iconClasses} />,
-    name: "Compony Jobs"
-  },
+  // {
+  //   path: '/app/JobUsers',
+  //   icon: <FaUserSecret className={iconClasses} />,
+  //   name: "Job Users"
+  // },
+  // {
+  //   path: '/app/IternShipUser',
+  //   icon: <PiUserSwitchThin className={iconClasses} />,
+  //   name: "InternShip Users"
+  // },
+  // {
+  //   path: '/app/Ads',
+  //   icon: <FaBuysellads className={iconClasses} />,
+  //   name: "Ads"
+  // },
+  // {
+  //   path: '/app/ComponyJobs',
+  //   icon: <PiUsersFour className={iconClasses} />,
+  //   name: "Compony Jobs"
+  // },
   // {
   //   path: "/app/leads", // url
   //   icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
@@ -89,42 +89,42 @@ const routes = [
   //   icon: <BoltIcon className={iconClasses} />, // icon component
   //   name: "Integration", // name that appear in Sidebar
   // },
+  // {
+  //   path: "/app/agencyaccount", // url
+  //   icon: <HiOutlineUsers className={iconClasses} />, // icon component
+  //   name: "Agency Account", // name that appear in Sidebar
+  // },
+  // {
+  //   path: "/app/companyaccount", // url
+  //   icon: <HiOutlineUserGroup className={iconClasses} />, // icon component
+  //   name: "Company Account", // name that appear in Sidebar
+  // },
+  // {
+  //   path: "/app/personalaccount", // url
+  //   icon: <LuUser2 className={iconClasses} />, // icon component
+  //   name: "Personal Account", // name that appear in Sidebar
+  // },
+  // {
+  //   path: "",
+  //   icon: <BsPostcardHeartFill className={`${iconClasses} inline`} />,
+  //   name: "Posts",
+  //   submenu: [
+  //     {
+  //       path: "/app/createpost",
+  //       icon: <MdCompost className={submenuIconClasses} />,
+  //       name: "Create Post",
+  //     },
+  //     {
+  //       path: "/app/allpost",
+  //       icon: <MdDoneAll className={submenuIconClasses} />,
+  //       name: "All Posts",
+  //     },
+  //   ],
+  // },
   {
-    path: "/app/agencyaccount", // url
-    icon: <HiOutlineUsers className={iconClasses} />, // icon component
-    name: "Agency Account", // name that appear in Sidebar
-  },
-  {
-    path: "/app/companyaccount", // url
-    icon: <HiOutlineUserGroup className={iconClasses} />, // icon component
-    name: "Company Account", // name that appear in Sidebar
-  },
-  {
-    path: "/app/personalaccount", // url
-    icon: <LuUser2 className={iconClasses} />, // icon component
-    name: "Personal Account", // name that appear in Sidebar
-  },
-  {
-    path: "",
-    icon: <BsPostcardHeartFill className={`${iconClasses} inline`} />,
-    name: "Posts",
-    submenu: [
-      {
-        path: "/app/createpost",
-        icon: <MdCompost className={submenuIconClasses} />,
-        name: "Create Post",
-      },
-      {
-        path: "/app/allpost",
-        icon: <MdDoneAll className={submenuIconClasses} />,
-        name: "All Posts",
-      },
-    ],
-  },
-  {
-    path: '/app/adminapprovels',
+    path: '/app/CarInspectionRequests',
     icon: <GrUserAdmin className={iconClasses} />,
-    name: "Admin Approvels"
+    name: "Car Inspection Requests"
   },
   // {
   //   path: '/app/calendar', // url
@@ -133,48 +133,48 @@ const routes = [
   // },
 
 
-  {
-    path: "", //no url needed as this has submenu
-    icon: <DocumentDuplicateIcon className={`${iconClasses} inline`} />, // icon component
-    name: "Approvals", // name that appear in Sidebar
-    submenu: [
-      {
-        path: "/app/ads",
-        icon: <ArrowRightOnRectangleIcon className={submenuIconClasses} />,
-        name: "Ads",
-      },
-      {
-        path: "/app/jobs", //url
-        icon: <UserIcon className={submenuIconClasses} />, // icon component
-        name: "Jobs", // name that appear in Sidebar
-      },
-      {
-        path: "/app/services",
-        icon: <KeyIcon className={submenuIconClasses} />,
-        name: "Services",
-      },
-      {
-        path: "/app/mining",
-        icon: <DocumentIcon className={submenuIconClasses} />,
-        name: "Mining Locations",
-      },
-      {
-        path: "/app/companies",
-        icon: <DocumentIcon className={submenuIconClasses} />,
-        name: "Companies",
-      },
-      {
-        path: "/app/workshop",
-        icon: <MdSettings className={submenuIconClasses} />,
-        name: "Workshops",
-      },
-      {
-        path: "/app/404",
-        icon: <ExclamationTriangleIcon className={submenuIconClasses} />,
-        name: "404",
-      },
-    ],
-  },
+  // {
+  //   path: "", //no url needed as this has submenu
+  //   icon: <DocumentDuplicateIcon className={`${iconClasses} inline`} />, // icon component
+  //   name: "Approvals", // name that appear in Sidebar
+  //   submenu: [
+  //     {
+  //       path: "/app/ads",
+  //       icon: <ArrowRightOnRectangleIcon className={submenuIconClasses} />,
+  //       name: "Ads",
+  //     },
+  //     {
+  //       path: "/app/jobs", //url
+  //       icon: <UserIcon className={submenuIconClasses} />, // icon component
+  //       name: "Jobs", // name that appear in Sidebar
+  //     },
+  //     {
+  //       path: "/app/services",
+  //       icon: <KeyIcon className={submenuIconClasses} />,
+  //       name: "Services",
+  //     },
+  //     {
+  //       path: "/app/mining",
+  //       icon: <DocumentIcon className={submenuIconClasses} />,
+  //       name: "Mining Locations",
+  //     },
+  //     {
+  //       path: "/app/companies",
+  //       icon: <DocumentIcon className={submenuIconClasses} />,
+  //       name: "Companies",
+  //     },
+  //     {
+  //       path: "/app/workshop",
+  //       icon: <MdSettings className={submenuIconClasses} />,
+  //       name: "Workshops",
+  //     },
+  //     {
+  //       path: "/app/404",
+  //       icon: <ExclamationTriangleIcon className={submenuIconClasses} />,
+  //       name: "404",
+  //     },
+  //   ],
+  // },
   // {
   //   path: "", //no url needed as this has submenu
   //   icon: <Cog6ToothIcon className={`${iconClasses} inline`} />, // icon component
