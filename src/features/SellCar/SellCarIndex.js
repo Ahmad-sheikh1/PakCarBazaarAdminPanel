@@ -8,7 +8,7 @@ import AddModalService from './AdServiceModel';
 const SellCarIndex = () => {
     const [originalData, setOriginalData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
-    const [isModalOpen, setModalOpen] = useState(true);
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const fetchData = async () => {
         const token = localStorage.getItem('token');
