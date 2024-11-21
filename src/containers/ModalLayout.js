@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { closeModal } from '../features/common/modalSlice'
-import ConfirmationModalBody from '../features/common/components/ConfirmationModalBody'
+// import ConfirmationModalBody from '../features/common/components/ConfirmationModalBody'
 
 
 function ModalLayout(){
