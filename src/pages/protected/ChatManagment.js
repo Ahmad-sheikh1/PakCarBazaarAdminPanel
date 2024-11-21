@@ -74,17 +74,17 @@ const Chat = () => {
   };
 
   // Fetch notifications
-  const fetchNotifications = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/notifications');
-      const data = await response.json();
-      if (data.notifications) {
-        setNotificationCount(data.notifications.length);
-      }
-    } catch (error) {
-      console.error('Error fetching notifications:', error);
-    }
-  };
+  // const fetchNotifications = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/notifications');
+  //     const data = await response.json();
+  //     if (data.notifications) {
+  //       setNotificationCount(data.notifications.length);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching notifications:', error);
+  //   }
+  // };
 
   // Step 4: UI Enhancements
   return (
@@ -159,7 +159,7 @@ const Chat = () => {
                   Send
                 </button>
 
-                <div className="relative">
+                {/* <div className="relative">
                   <button
                     onClick={fetchNotifications}
                     className="p-2 bg-gray-300 rounded-full hover:bg-gray-400"
@@ -171,7 +171,7 @@ const Chat = () => {
                       </span>
                     )}
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -35,9 +35,9 @@ function Header() {
 
 
     // Opening right sidebar for notification
-    const openNotification = () => {
-        dispatch(openRightDrawer({ header: "Notifications", bodyType: RIGHT_DRAWER_TYPES.NOTIFICATION }))
-    }
+    // const openNotification = () => {
+    //     dispatch(openRightDrawer({ header: "Notifications", bodyType: RIGHT_DRAWER_TYPES.NOTIFICATION }))
+    // }
 
 
     function logoutUser() {
