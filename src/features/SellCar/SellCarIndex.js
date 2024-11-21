@@ -3,10 +3,12 @@ import TitleCard from '../../components/Cards/TitleCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { baseuRL } from '../../app/api';
+import AddModalService from './AdServiceModel';
 
 const SellCarIndex = () => {
     const [originalData, setOriginalData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
+    const [isModalOpen, setModalOpen] = useState(true);
 
     const fetchData = async () => {
         const token = localStorage.getItem('token');
@@ -47,6 +49,7 @@ const SellCarIndex = () => {
                                 <th>Model</th>
                                 <th>Price</th>
                                 <th>Contact Information</th>
+                                <th>Send Estimation Price</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,6 +68,13 @@ const SellCarIndex = () => {
                                             <td>{user.model}</td>
                                             <td>{user.price}</td>
                                             <td>{user.contactInformation}</td>
+                                            <td>
+                                                <button
+                                                    onClick={() => setModalOpen(true)}
+                                                >
+                                                    Estimation Price
+                                                </button>
+                                            </td>
                                         </tr>
                                     )
                                 })
@@ -73,6 +83,10 @@ const SellCarIndex = () => {
                     </table>
                 </div>
             </TitleCard>
+            <AddModalService
+                isOpen={isModalOpen}
+                onClose={() => setModalOpen(false)}
+            />
         </>
     )
 }

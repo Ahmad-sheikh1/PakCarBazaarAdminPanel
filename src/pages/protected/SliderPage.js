@@ -11,15 +11,14 @@ const Slider = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch('http://3.108.36.199:5000/api/slider/GetSliderImages');
-        if (!response.ok) {
+        const response = await axios.get(`${baseuRL}/api/slider/GetSliderImages`);
+        if (!response.data) {
           throw new Error('Failed to fetch images');
         }
-        const data = await response.json();
 
-        if (data.success && data.Data && Array.isArray(data.Data) && data.Data.length > 0) {
+        if (response.data.success) {
           // Ensure we access the first element and images array safely
-          setImages(data.Data[0].images || []);
+          setImages(response.data.Data[0].images || []);
         } else {
           console.error("Error: API did not return success or no images found.");
         }
@@ -34,12 +33,12 @@ const Slider = () => {
   const handleDelete = async (imageUrl) => {
     try {
       // Make an API request to delete the image by its ID
-      const response = await axios.delete(`${baseuRL}/api/slider/delete-image`, { data: { imageUrl },});
+      const response = await axios.delete(`${baseuRL}/api/slider/delete-image`, { data: { imageUrl }, });
 
       if (response.data) {
         // Update the images state by removing the deleted image
-        setImages((prevImages) => prevImages.filter((image) => image.id !== id));
-        alert('Image deleted successfully!');
+        setImages((prevImages) => prevImages.filter((image) => image !== imageUrl));
+        // alert('Image deleted successfully!');
       } else {
         alert('Failed to delete image. Please try again.');
       }
@@ -84,7 +83,7 @@ const Slider = () => {
         },
       });
 
-      if (response.data.success) {
+      if (response.data) {
         setImages((prevImages) => [...prevImages, ...response.data.Data]);
         setSelectedImages([]);
         setShowModal(false);

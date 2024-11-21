@@ -21,11 +21,16 @@ const Chat = lazy(() => import("../pages/protected/ChatManagment"));
 const AdminControl = lazy(() => import("../pages/protected/AdminControls"))
 const Blogs = lazy(() => import("../pages/protected/BlogsPage"));
 const Slider = lazy(() => import("../pages/protected/SliderPage"))
+const LastActiveUsers = lazy(() => import("../pages/protected/LastActiveUsers"))
 
 const routes = [
   {
     path : '/SellCar',
     component : SellCar
+  },
+  {
+    path : "/LastActiveUsers",
+    component : LastActiveUsers
   },
   {
     path: '/dashboard', // the url

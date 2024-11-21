@@ -45,6 +45,11 @@ const routes = [
     name: "Become Our Partner"
   },
   {
+    path: '/app/LastActiveUsers',
+    icon: <GrServices className={iconClasses} />,
+    name: "Last Active Users"
+  },
+  {
     path: '/app/SellCar',
     icon: <MdOutlineMiscellaneousServices className={iconClasses} />,
     name: "Sell car"
